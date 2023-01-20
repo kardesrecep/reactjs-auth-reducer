@@ -4,7 +4,7 @@ import { counterInitialState } from "./counter-initial-state";
 export const counterReducer = (state = counterInitialState, action) => {
   if (action.type === COUNTER_UP) {
     const newState = { ...state, counter: state.counter + 1 };
-    //oluşturulan yeni state return edildiğinde mevcut state güncellendi
+    // Oluşturulan yeni state return edildiğinde mevcut state güncellenmiş olur.
     return newState;
   } else if (action.type === COUNTER_DOWN) {
     const newState = { ...state, counter: state.counter - 1 };
@@ -13,6 +13,8 @@ export const counterReducer = (state = counterInitialState, action) => {
     const newState = { ...state, counter: action.payload };
     return newState;
   }
-  //bu satır hiç bir if case ine girmediğinde geriye mevcut state göndermesi için yazıldı olmazsa bütün state uçar
+
+  // Bu satır hiç bir if case ine girmediğinde geriye mevcut state i göndersin diye yazıldı
+  // Eğer olmazsa tüm state uçar.
   return state;
 };
